@@ -4,16 +4,18 @@
  */
 package com.qitsoft.qitchain;
 
+import java.io.Serializable;
+
 /**
  *
  * @author serj
  */
-public interface ChainStepExecutor {
+public interface ChainStepExecutor extends Serializable {
     
     public static enum Status {
-        EXECUTE,
+        DONE,
         POSTPONE,
-        CANCEL;
+        SKIP;
     }
     
     Status execute(ChainStorage storage);
